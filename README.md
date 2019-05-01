@@ -90,3 +90,14 @@ init_array(5, 'a');
 init_array(5, () => gen_pois(10));
 // Array(5) [11, 12, 6, 6, 8]
 ```
+
+__Get unique elements of array__
+
+```js
+function unique(vec){
+  return [...new Set(vec)];
+}
+
+unique(['a', 'b', 'a', 'c', 'c', 'd']);
+//Array(4) ["a", "b", "c", "d"]
+```
