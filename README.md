@@ -56,7 +56,7 @@ function weighted_sample(values, weights){
   return values[i];
 }
 
-sample_w(['a', 'b', 'c'], [0.1, 0.6, 0.3]);
+weighted_sample(['a', 'b', 'c'], [0.1, 0.6, 0.3]);
 //"b"
 ```
 
