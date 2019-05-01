@@ -1,5 +1,7 @@
 # Javascript Statistics Snippets
 
+<img width="410" alt="Untitled" src="https://user-images.githubusercontent.com/6764693/57027780-e937e680-6c02-11e9-832a-cb42ff6de5dd.png">
+
 Ever wanted to do something simple like generate random values from a distribution but didn't want to import a whole new library? 
 This repo contains an ever growing list of the functions I have written for doing things related to statistics. Such as generating random values from distributions etc. 
 
