@@ -107,6 +107,7 @@ sum(normalize([2,3,4,6,7]));
 // 1
 ```
 
+---
 __Weighted Sample__
 
 Draw a single element from an array with probability according to a weight array. 
