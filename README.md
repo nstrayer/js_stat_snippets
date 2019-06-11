@@ -41,6 +41,72 @@ function gen_discrete_unif(min = 0, max = 100){
 
 ## Array helpers
 
+---
+
+### Copy array
+
+Do a psuedo deep copy on an array of objects.
+
+```js
+function copy_array(arr){
+  return arr.map(obj => Object.assign({}, obj));
+}
+
+copy_array([{a: 1, b: 2}, {a: 2, b: 5}]);
+//Array(2) [
+//  0: Object {a: 1, b: 2}
+//  1: Object {a: 2, b: 5}
+//]
+```
+
+---
+### Array product
+Get product of all elements in an array. 
+
+
+```js
+function product(arr){
+  return arr.reduce((p, d) => p*d, 1);
+}
+
+product([1,2,3])
+// 6
+```
+
+---
+### Sum of elements
+
+Sums everything in the array into single number.
+
+```js
+function sum(arr){
+  return arr.reduce((s, el) => s + el, 0);
+}
+
+sum([1,2,3,4])
+//10
+```
+
+---
+### Normalize 
+
+Normalize each element of the array such that the sum of all elements in the array is 1.
+
+
+```js
+function normalize(arr){
+  const total_size = arr.reduce((s, el) => s + el, 0); 
+  // or sum(arr);
+  return arr.map(el => el/total_size);
+}
+
+normalize([1,2,3,4]);
+//Array(4) [0.1, 0.2, 0.3, 0.4]
+
+sum(normalize([2,3,4,6,7]));
+// 1
+```
+
 __Weighted Sample__
 
 Draw a single element from an array with probability according to a weight array. 
@@ -58,6 +124,24 @@ function weighted_sample(values, weights){
 
 weighted_sample(['a', 'b', 'c'], [0.1, 0.6, 0.3]);
 //"b"
+```
+
+---
+### Flatten (1-level) nested arrays 
+
+Turns an array of arrays into a single array. Note: only works with one level of nesting. 
+
+```js
+function flatten(arr){
+  return [].concat(...arr);
+}
+
+flatten([
+  ['a', 'b'], 
+  ['c', 'd'], 
+  ['e', 'f']
+]);
+//Array(6) ['a', 'b', 'c', 'd', 'e', 'f']
 ```
 
 __Initialize array of given size__
